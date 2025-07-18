@@ -1,7 +1,11 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+
+@font-face {
+  font-family:Press_Start_2P;
+  src: url("./assets/font/Press_Start_2P/PressStart2P-Regular.ttf");
+}
 
 
 @theme {
-  --font-pixelify: Pixelify Sans, sans-serif;
+  --font-Press_Start_2P: Press_Start_2P, sans-serif;
 }

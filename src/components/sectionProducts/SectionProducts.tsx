@@ -3,7 +3,7 @@ import { Products } from "./products/Products"
 export const SectionProducts = () => {
   return (
     <div className='w-full bg-[#0a79fb]'>
-      <h2 className=" text-center text-7xl text-white font-pixelify font-bold mb-20
+      <h2 className=" text-center text-7xl text-white font-Press_Start_2P font-bold  mb-20
       ">
         Productos
         </h2>
