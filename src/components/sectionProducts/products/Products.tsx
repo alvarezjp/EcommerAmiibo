@@ -1,24 +1,46 @@
-import { useQuery } from "@tanstack/react-query";
-import { getProducts } from "../../../service";
-import type { ProductType } from "../../../type";
+// import { useQuery } from "@tanstack/react-query";
+// import { useDispatch, useSelector } from "react-redux";
+// import { getProducts } from "../../../service";
+import type { ProductCartInterface, ProductType } from "../../../type";
+import type { AppDispatch, RootState } from "@/redux/Store";
+// import { addToCart } from "../../../redux/Products/index";
 
 
 
+export interface ProductsProps {
+  product:ProductType
+}
 
-export const Products = () => {
+export const Products = ({product}:ProductsProps) => {
 
-  const { data } = useQuery<ProductType[]>({
-    queryKey: ['getProducts'],
-    queryFn: getProducts
-  });
+  
+
+// const viewProduct = useSelector<RootState>((state) => state.SliceProduct.cartProduct )
+//   const dispatch = useDispatch<AppDispatch>();
+
+  // const handleAddCart = (product:ProductType) => { --- Seguir de aca
+  //   const sendProductCart:ProductCartInterface = {
+  //     id:product.id,
+  //     name:product.name,
+  //     image:product.image,
+  //     gameSeries:product.gameSeries,
+  //     prise:product.price,
+  //     quantity:1
+  //   }
+
+  //   dispatch(addToCart(sendProductCart))
+  //   console.log(viewProduct);
+    
+  // }
+  
 
   return (
     <>
-      {data?.map((product, index) => (
-
+      
+        
         <div className=" h-[450px] w-[300px] 
         flex flex-col justify-end overflow-hidden 
-        "key={index}>
+        "key={product.id}>
 
           <div className=" w-full h-[150px] 
           flex justify-center bg-[#eaf4ff] rounded-t-4xl 
@@ -38,15 +60,13 @@ export const Products = () => {
             </div>
 
             <button className="bg-[#0a79fb] hover:bg-[#075ccc] text-white font-bold text-lg
-             w-7/8 rounded-full p-1 cursor-pointer   
-          
-            ">
+             w-7/8 rounded-full p-1 cursor-pointer"
+            >
               Agregar al carro
             </button>
           </div>
         </div>
-
-      ))}
+     
 
     </>
   )

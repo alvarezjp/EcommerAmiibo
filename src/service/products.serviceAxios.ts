@@ -1,5 +1,5 @@
 import axios from "axios";
-import type { ProductType } from "../type/service.type";
+import type { ProductType } from "../type/products.type";
 
 export const getProducts = async ():Promise<ProductType[]> => {
   try {

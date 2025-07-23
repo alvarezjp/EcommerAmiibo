@@ -3,7 +3,7 @@ import { SectionProducts } from "../sectionProducts/SectionProducts"
 export const Home = () => {
   return (
     < >
-      <section className="flex flex-col ">
+      <section className="flex flex-col overflow-visible">
         <article className="
         bg-[url('/hero.png')] bg-cover bg-center
          flex h-screen relative
@@ -21,6 +21,7 @@ export const Home = () => {
             <SectionProducts />
           </div>
         </article>
+
       </section>
     </>
   )

@@ -18,3 +18,12 @@ export interface Release {
     jp: Date;
     na: Date;
 }
+
+export interface ProductCartInterface {
+    id:number;
+    name:string;
+    gameSeries:string;
+    image:string;
+    prise:number;
+    quantity:number;
+}
