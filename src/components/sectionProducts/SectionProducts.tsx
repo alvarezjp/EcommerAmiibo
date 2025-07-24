@@ -20,7 +20,7 @@ export const SectionProducts = () => {
       overflow-hidden px-4 
       ">
         {data?.map((product) => (
-          <Products product={product}/>
+          <Products key={product.id} product={product}/>
         ))
         }
       </div>

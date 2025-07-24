@@ -1,3 +1,4 @@
+export * from './dropDownCart/DropDownCart';
 export * from './footer/Footer';
 export * from './home/Home';
 export * from './layout/LayoutHome';
