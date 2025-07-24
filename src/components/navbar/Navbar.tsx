@@ -6,7 +6,7 @@ import { Link } from 'react-router';
 import { useState } from 'react';
 import { DropDownCart } from '../dropDownCart/DropDownCart';
 import { useSelector } from 'react-redux';
-import { RootState } from '@/redux/Store';
+import type { RootState } from '@/redux/Store';
 import type { ProductCartInterface } from '@/type';
 
 const Navbar = () => {
