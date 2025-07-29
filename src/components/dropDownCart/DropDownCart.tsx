@@ -1,10 +1,42 @@
 import type { ProductCartInterface } from '@/type'
-import type { RootState } from '../../redux/Store/index'
-import { useSelector } from "react-redux"
+import { type AppDispatch, type RootState } from '../../redux/Store/index'
+import { useDispatch, useSelector } from "react-redux"
+import { addToCart, removeToCart } from '../../redux/Products/Products.slice'
 
 export const DropDownCart = () => {
     const cartProduct = useSelector<RootState, ProductCartInterface[]>((state) => state.SliceProduct.cartProduct)
-    console.log();
+    const dispatch = useDispatch<AppDispatch>();
+
+    type CartAction = 'add' | 'remove';
+    interface CartHandleProps{
+        product:ProductCartInterface,
+        action:CartAction;
+    }
+
+    
+
+const sendProductCart = ({product , action}:CartHandleProps) => {
+  const productInfo = {
+    id: product.id,
+    name: product.name,
+    image: product.image,
+    gameSeries: product.gameSeries,
+    prise: product.prise,
+    quantity: 1
+  };
+
+  if(action==='add'){
+      dispatch(addToCart(productInfo)) 
+  }else if( action === 'remove'){
+      dispatch(removeToCart(productInfo)) 
+  }
+
+
+ 
+
+
+}
+
 
 
     return (
@@ -26,13 +58,14 @@ export const DropDownCart = () => {
                         <div className="flex  items-center gap-2">
                             <button
                                 className="w-6 h-6 flex items-center justify-center rounded-full  text-white text-mg font-semibold cursor-pointer"
-                                
+                                onClick={() => sendProductCart({product,action:'remove'})}
                             >
                                 –
                             </button> 
                             <span className="text-gray-700 font-semibold">{product.quantity}</span>
                             <button
                                 className="w-6 h-6 flex items-center justify-center rounded-full  text-white text-mg font-semibold cursor-pointer"
+                                onClick={() => sendProductCart({product,action:'add'})}
                             >
                                 +
                             </button>

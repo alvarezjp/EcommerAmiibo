@@ -2,13 +2,14 @@ import { useDispatch } from "react-redux";
 import type { ProductCartInterface, ProductType } from "../../../type";
 import type { AppDispatch } from "@/redux/Store";
 import { addToCart } from "../../../redux/Products/index";
+import { useState } from "react";
 
 export interface ProductsProps {
   product: ProductType
 }
 
 export const Products = ({ product }: ProductsProps) => {
-  
+
   const dispatch = useDispatch<AppDispatch>();
   const sendProductCart: ProductCartInterface = {
     id: product.id,
@@ -19,8 +20,11 @@ export const Products = ({ product }: ProductsProps) => {
     quantity: 1
   }
 
+  const [viewProduct, setViewProduct] = useState<boolean>(false)
 
+  if (viewProduct) return null;
   return (
+
     <>
       <div className=" h-[450px] w-[300px] 
         flex flex-col justify-end overflow-hidden 
@@ -29,7 +33,10 @@ export const Products = ({ product }: ProductsProps) => {
         <div className=" w-full h-[150px] 
           flex justify-center bg-[#eaf4ff] rounded-t-4xl 
           ">
-          <img src={product.image} alt={`imagen del producto: ${product.name}`}
+          <img
+            src={product.image}
+            alt={`imagen del producto: ${product.name}`}
+            onError={() => setViewProduct(true)}
             className=" 
              rounded-3xl h-[300px] -translate-y-36
             "/>
@@ -45,7 +52,7 @@ export const Products = ({ product }: ProductsProps) => {
 
           <button className="bg-[#0a79fb] hover:bg-[#075ccc] text-white font-bold text-lg
              w-7/8 rounded-full p-1 cursor-pointer"
-             onClick={() =>dispatch(addToCart(sendProductCart)) }
+            onClick={() => dispatch(addToCart(sendProductCart))}
           >
             Agregar
           </button>
