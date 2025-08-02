@@ -16,7 +16,7 @@
       "tail": "00000002",
       "type": "Figure",
       "id": 0,
-      "price": 118
+      "price": 150
     },
     {
       "amiiboSeries": "Super Mario Bros.",
@@ -34,7 +34,7 @@
       "tail": "00340102",
       "type": "Figure",
       "id": 1,
-      "price": 132
+      "price": 100
     },
     {
       "amiiboSeries": "Super Mario Bros.",
@@ -52,7 +52,7 @@
       "tail": "003c0102",
       "type": "Figure",
       "id": 2,
-      "price": 184
+      "price": 200
     },
     {
       "amiiboSeries": "Super Mario Bros.",
@@ -14974,7 +14974,7 @@
       "tail": "04271902",
       "type": "Card",
       "id": 831,
-      "price": 161
+      "price": 150
     },
     {
       "amiiboSeries": "Yu-Gi-Oh!",

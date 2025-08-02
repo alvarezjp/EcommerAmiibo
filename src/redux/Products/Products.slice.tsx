@@ -19,7 +19,6 @@ export const ProductSlicer = createSlice({
 
             if (ExploredProduct) {
                 ExploredProduct.quantity += 1
-                ExploredProduct.prise = ExploredProduct.quantity * ExploredProduct.prise
             } else {
                 state.cartProduct.push(action.payload)
             }
@@ -33,10 +32,9 @@ export const ProductSlicer = createSlice({
             } else {
 
                 if (ExploredProduct?.quantity === 1) {
-                    state.cartProduct = state.cartProduct.filter((product) => product.id !== action.payload.id )
+                    state.cartProduct = state.cartProduct.filter((product) => product.id !== action.payload.id)
                 }
                 else {
-                    ExploredProduct.prise = ExploredProduct.prise / ExploredProduct.quantity 
                     ExploredProduct.quantity -= 1
                 }
             }
@@ -46,6 +44,6 @@ export const ProductSlicer = createSlice({
     }
 })
 
-export const { addToCart,removeToCart } = ProductSlicer.actions;
+export const { addToCart, removeToCart } = ProductSlicer.actions;
 
 export default ProductSlicer.reducer;
