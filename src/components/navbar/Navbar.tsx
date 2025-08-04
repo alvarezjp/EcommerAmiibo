@@ -57,7 +57,8 @@ const Navbar = () => {
       {/* Esto debo hacerlo un componente externo mas adelante */}
 
       {!touch ?
-        <DropDownCart />
+        // <DropDownCart />
+        <DropDownCart variant="dropdown" />
         : <></>}
     </nav>
   )

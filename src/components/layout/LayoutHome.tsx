@@ -6,6 +6,7 @@ export const LayoutHome = () => {
     <section className="flex flex-col">
     <Navbar/>
     <Outlet/>
+  
     </section>
   )
 }

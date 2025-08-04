@@ -10,6 +10,11 @@
 
 @theme {
   --font-Press_Start_2P: Press_Start_2P, sans-serif;
+  --color-principal: #0A79FB;
+  --color-blanco:#FFFFFF;
+  --color-mostaza:#FDC700;
+
+
 }
 
 @theme inline {
